@@ -51,7 +51,7 @@ class MainWindow(QtWidgets.QWidget):
         self.max_allowed_blocks = 10
         self.cmd_dict = {"target": '-t {}'.format(self.build_target),
                          "device": '-d {}'.format(self.device),
-                         "include": '-I {}'.format(' '.join(self.oot_dirs)),
+                         "include": ('-I {}'.format(' '.join(self.oot_dirs)) if (self.oot_dirs != []) else "" ),
                          "fill_fifos": '',
                          "viv_gui": '',
                          "cleanall": '',
